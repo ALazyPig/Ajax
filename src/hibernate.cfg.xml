@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings（连接数据库） -->
+        <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        <property name="connection.url">jdbc:oracle:thin:@127.0.0.1:1521:orcl</property>
+        <property name="connection.username">cen_sqzg</property>
+        <property name="connection.password">$RFV5tgb</property>
+
+        <!-- JDBC connection pool (use the built-in)自带连接池，一般不用 -->
+        <!-- <property name="connection.pool_size">1</property> -->
+
+        <!-- SQL dialect(方言) -->
+        <!-- <property name="dialect">org.hibernate.dialect.HSQLDialect</property> -->
+		<property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Disable the second-level cache(二级缓存)  -->
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+        <!-- Echo all executed SQL to stdout(在执行过程中将生成的sql打印出来) -->
+        <property name="show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup(hbm:hibernate Mapping,是否自动生成建表语句) -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+
+        <mapping resource="com/zhaojun/ajax/model/User.hbm.xml"/>
+    </session-factory>
+
+</hibernate-configuration>
