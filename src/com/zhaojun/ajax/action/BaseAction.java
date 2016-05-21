@@ -13,6 +13,7 @@ import com.zhaojun.ajax.service.SaveService;
 import com.zhaojun.ajax.serviceImpl.SaveServiceImpl;
 
 
+
 public class BaseAction extends ActionSupport{
 	private User user;
 	private SaveService saveService = new SaveServiceImpl();
